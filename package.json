@@ -1,0 +1,29 @@
+{
+  "name": "ult-price-graph",
+  "version": "1.0.0",
+  "description": "price graph for ULT coin",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULCproject/ult-price-graph.git"
+  },
+  "keywords": [
+    "ULT",
+    "Node.js",
+    "D3.js",
+    "sqlite"
+  ],
+  "author": "Maher BEN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULCproject/ult-price-graph/issues"
+  },
+  "homepage": "https://github.com/ULCproject/ult-price-graph#readme",
+  "dependencies": {
+    "sqlite3": "^4.0.2"
+  }
+}
