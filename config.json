@@ -1,0 +1,6 @@
+{
+  "port": 8085,
+  "dbName": "ult",
+  "dbPass": "ult123",
+  "cronTimer": 60
+}
