@@ -11,9 +11,11 @@ const app = express()
 //   extended: true
 // }))
 app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
   res.header('Content-Type', 'application/json')
   next()
 })
+
 var sqlite3 = require('sqlite3').verbose()
 var db = new sqlite3.Database('ult.db')
 
