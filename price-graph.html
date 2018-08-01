@@ -10,7 +10,7 @@
 
 var seriesOptions = [],
   seriesCounter = 0,
-  names = ['prices', 'prices24h', 'volume24h'];
+  names = ['prices', 'prices24h', 'volumes24h'];
 
 /**
  * Create the chart when all data is loaded
@@ -55,13 +55,16 @@ function createChart() {
 }
 
 $.each(names, function (i, name) {
-
-  $.getJSON('https://localhost:8085/ult/' + name.toLowerCase(),  function (data) {
+    $.ajax({
+    type: 'GET',
+    url: 'http://localhost:8085/ult/' + name.toLowerCase(),
+    dataType: 'json',
+    success: function(data) {
+    	console.log('success');
     seriesOptions[i] = {
-      name: name,
-      data: data
+    name: name,
+    data: data
     };
-
     // As we're loading the data asynchronously, we don't know what order it will arrive. So
     // we keep a counter and create the chart when all the data is loaded.
     seriesCounter += 1;
@@ -69,6 +72,7 @@ $.each(names, function (i, name) {
     if (seriesCounter === names.length) {
       createChart();
     }
-  });
+            }        
+ });
 });
 </script>
