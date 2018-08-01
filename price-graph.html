@@ -60,7 +60,6 @@ $.each(names, function (i, name) {
     url: 'http://localhost:8085/ult/' + name.toLowerCase(),
     dataType: 'json',
     success: function(data) {
-    	console.log('success');
     seriesOptions[i] = {
     name: name,
     data: data
