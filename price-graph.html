@@ -10,7 +10,7 @@
 
 var seriesOptions = [],
   seriesCounter = 0,
-  names = ['prices', 'prices24h', 'volumes24h'];
+  names = ['prices', 'prices24h'];
 
 /**
  * Create the chart when all data is loaded
@@ -27,7 +27,7 @@ function createChart() {
     yAxis: {
       labels: {
         formatter: function () {
-          return (this.value > 0 ? ' + ' : '') + this.value + '%';
+          return '$ ' + this.value;
         }
       },
       plotLines: [{
@@ -39,7 +39,6 @@ function createChart() {
 
     plotOptions: {
       series: {
-        compare: 'percent',
         showInNavigator: true
       }
     },
