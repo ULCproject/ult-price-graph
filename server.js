@@ -20,7 +20,12 @@ var sqlite3 = require('sqlite3').verbose()
 var db = new sqlite3.Database('ult.db')
 
 app.get('/ult/info', function (req, res) {
-  res.send({symbol: 'ult', marketCap: '', circulatingSupply: '', maxSupply: ''})
+  res.send({
+    symbol: 'ult',
+    marketCap: '',
+    circulatingSupply: '',
+    maxSupply: ''
+  })
 })
 app.get('/ult/prices', async function (req, res) {
   let prices = []
