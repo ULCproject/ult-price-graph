@@ -22,15 +22,16 @@
     function createChart() {
 
         Highcharts.stockChart('container', {
-   legend: {
-        enabled: true
-    },
+            legend: {
+                enabled: true
+            },
 
             rangeSelector: {
                 selected: 4
-            },    chart: {
-		        zoomType: 'x'
-		    },
+            },
+            chart: {
+                zoomType: 'x'
+            },
             yAxis: [{
                 labels: {
                     formatter: function() {
@@ -40,7 +41,7 @@
                 },
                 title: {
                     text: 'Price (USD)',
-                    x:15
+                    x: 15
                 },
                 plotLines: [{
                     value: 0,
@@ -54,7 +55,7 @@
                 },
                 title: {
                     text: 'Volume',
-                    x:15
+                    x: 15
                 },
                 top: '70%',
                 height: '30%',
@@ -92,7 +93,7 @@
     })
     $.getJSON('http://localhost:8085/ult/volumes24h', function(data) {
         seriesOptions.push({
-        	type: 'column',
+            type: 'column',
             name: 'volume',
             data: data,
             yAxis: 1
@@ -107,8 +108,8 @@
         }
     })
     $.getJSON('http://localhost:8085/ult/prices24h', function(data) {
-	    prices24h = data
-    	seriesCounter += 1
+        prices24h = data
+        seriesCounter += 1
 
         if (seriesCounter === 3) {
             createChart()
